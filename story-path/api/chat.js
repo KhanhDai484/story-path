@@ -1,5 +1,3 @@
-import { kv } from '@vercel/kv';
-
 const CLAUDE_API_KEY = process.env.CLAUDE_API_KEY;
 const CLAUDE_API_URL = 'https://api.anthropic.com/v1/messages';
 
