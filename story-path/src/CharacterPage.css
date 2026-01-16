@@ -43,27 +43,27 @@
 
 /* Backgrounds */
 .bg-forest {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://i.pinimg.com/736x/89/ca/4b/89ca4bb279d861de352644d5cbf1074a.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://vb.1cdn.vn/2025/08/29/static-images.vnncdn.net-vps_images_publish-000001-000003-2025-8-28-_w-5f078393c9ca42941bdb-4032.jpg');
 }
 
 .bg-mountain {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://i.pinimg.com/736x/6c/b3/26/6cb32686cb6668cb55fbec7ef65b1229.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://media.vneconomy.vn/images/upload/2022/10/09/a2-tw-1665289225420491012196.jpg');
 }
 
 .bg-castle {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://media.baobinhphuoc.com.vn/Content/UploadFiles/EditorFiles/images/2017/Quy4/ccc26102017105816.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://vb.1cdn.vn/2025/08/29/static-images.vnncdn.net-vps_images_publish-000001-000003-2025-8-28-_w-b9a1611e2b47a019f956-4031.jpg');
 }
 
 .bg-cave {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://th.bing.com/th/id/R.9acb629d0378bd39aaa456219ade430e?rik=yIdhWLCscYVEOQ&pid=ImgRaw&r=0');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://th.bing.com/th/id/R.e27d2d7348d353c66498410cade43431?rik=M4b0zlCNtZv9Ag&riu=http%3a%2f%2fquocphongthudo.vn%2fupload%2f2001606%2ffck%2fimage_2021-11-09_144658.png&ehk=A4iCzB21avEUwagwCrdRnw%2f%2fDKDjniRZXMDUEx5plV8%3d&risl=&pid=ImgRaw&r=0');
 }
 
 .bg-lake {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('./pictures/5.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://img.lsvn.vn/vne-news/February2024/121.jpg');
 }
 
 .bg-ocean {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://external-preview.redd.it/oGQ6qWpXhL6vrUfL0CEUyleqB7fPbrEUo71rxeM2otM.jpg?auto=webp&s=76062499cb3e93b6f337f1892be04cd231bc01be');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://vb.1cdn.vn/2025/08/29/static-images.vnncdn.net-vps_images_publish-000001-000003-2025-8-28-_w-27aa2ec3649aefc4b68b-4049.jpg');
 }
 
 .full-screen-container {
@@ -203,7 +203,7 @@
 }
 
 .menu-text {
-  font-family: 'Cinzel', serif;
+  font-family: 'Playfair Display', serif;
   color: #a89968;
   cursor: pointer;
   letter-spacing: 2px;
@@ -284,7 +284,7 @@
 /* Annotation Labels */
 .annotation {
   position: absolute;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Lora', serif;
   font-size: 0.85rem;
   color: rgba(196, 185, 152, 0.7);
   letter-spacing: 1px;
@@ -374,7 +374,7 @@
 }
 
 .character-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Lora', serif;
   font-size: 1.6rem;
   color: #a89968;
   font-style: italic;
@@ -478,6 +478,20 @@
 
 .btn-action.primary {
   background: rgba(196, 185, 152, 0.1);
+}
+
+.btn-action.correct {
+  background: rgba(46, 204, 113, 0.2);
+  border-color: #2ecc71;
+  color: #2ecc71;
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.2);
+}
+
+.btn-action.wrong {
+  background: rgba(231, 76, 60, 0.2);
+  border-color: #e74c3c;
+  color: #e74c3c;
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.2);
 }
 
 /* Portrait with Annotations */
@@ -752,7 +766,7 @@
   background: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(196, 185, 152, 0.3);
   padding: 8px 15px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Lora', serif;
   font-size: 0.85rem;
   color: #c4b998;
   letter-spacing: 1px;
