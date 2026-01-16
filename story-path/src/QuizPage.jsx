@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './CharacterPage.css'; 
+import './CharacterPage.css';
 import FrameSVG from './components/FrameSVG';
 import FrameClipPath from './components/FrameClipPath';
 
@@ -23,54 +23,54 @@ const QuizPage = ({ onBack, characterData }) => {
         correct: 1
       }
     ],
-    avallach: [
+    arthur: [
       {
-        question: "Avallach thuộc chủng tộc nào trong truyền thuyết?",
-        options: ["Người phàm", "Tộc Tiên (Elf)", "Người khổng lồ", "Phù thủy hắc ám"],
+        question: "Arthur thuộc dòng dõi nào?",
+        options: ["Người phàm", "Hoàng gia Pendragon", "Người khổng lồ", "Phù thủy hắc ám"],
         correct: 1
       },
       {
-        question: "Nhiệm vụ cao cả nhất của Avallach là gì?",
-        options: ["Rèn vũ khí", "Bảo hộ huyết thống cổ xưa", "Xây dựng thành trì", "Chinh phạt lục địa"],
+        question: "Biểu tượng quyền lực của Arthur là gì?",
+        options: ["Rèn vũ khí", "Rút thanh kiếm trong đá", "Xây dựng thành trì", "Chinh phạt lục địa"],
         correct: 1
       },
       {
-        question: "Kỹ năng đặc biệt nhất của Avallach là gì?",
-        options: ["Sức mạnh cơ bắp", "Du hành xuyên không gian", "Điều khiển lửa", "Chế tạo thuốc độc"],
+        question: "Arthur đã thành lập hội gì?",
+        options: ["Hội kín", "Hội Hiệp sĩ Bàn Tròn", "Hội Pháp sư", "Hội Thợ rèn"],
         correct: 1
       }
     ],
-    morgian: [
+    lancelot: [
       {
-        question: "Morgian thường xuất hiện với hình tượng nào?",
-        options: ["Nữ vương băng giá", "Nữ pháp sư quyền năng", "Nữ hiệp sĩ", "Nông dân"],
+        question: "Lancelot được mệnh danh là gì?",
+        options: ["Kẻ phản bội", "Hiệp sĩ tài ba nhất", "Phù thủy đen", "Người nông dân"],
         correct: 1
       },
       {
-        question: "Mối quan hệ giữa Morgian và Arthur là gì?",
-        options: ["Vợ chồng", "Chị em cùng cha khác mẹ", "Kẻ thù truyền kiếp", "Thầy trò"],
-        correct: 1
+        question: "Vũ khí ưa thích của Lancelot là gì?",
+        options: ["Kiếm (Arondight)", "Cung tên", "Rìu chiến", "Gậy phép"],
+        correct: 0
       },
       {
-        question: "Đảo Avalon là nơi Morgian làm gì?",
-        options: ["Chôn cất báu vật", "Chữa trị vết thương cho Arthur", "Luyện kiếm", "Giam giữ Merlin"],
-        correct: 1
+        question: "Lancelot có quan hệ tình cảm với ai?",
+        options: ["Guinevere", "Morgan Le Fay", "Lady of the Lake", "Merlin"],
+        correct: 0
       }
     ],
-    pelleas: [
+    percival: [
       {
-        question: "Pelleas là thành viên của tổ chức nào?",
-        options: ["Hội kín", "Hiệp sĩ Bàn Tròn", "Đội quân đánh thuê", "Học viện pháp thuật"],
+        question: "Percival nổi tiếng vì điều gì?",
+        options: ["Sự ngây thơ và thuần khiết", "Sự tàn bạo", "Khả năng bay", "Giàu có"],
         correct: 1
       },
       {
-        question: "Pelleas nổi tiếng với phẩm chất gì?",
-        options: ["Sự mưu mô", "Lòng trung thành và tình yêu si mê", "Sự tàn nhẫn", "Tài ca hát"],
-        correct: 1
+        question: "Percival đã chứng kiến vật gì?",
+        options: ["Chén Thánh (Holy Grail)", "Vương miện quỷ", "Rồng lửa", "Kho báu bị nguyền rủa"],
+        correct: 0
       },
       {
-        question: "Vũ khí chính của Pelleas thường dùng là gì?",
-        options: ["Cung tên", "Thương và Khiên", "Gậy phép", "Song đao"],
+        question: "Percival gia nhập Hội Bàn Tròn sau ai?",
+        options: ["Gawain", "Lancelot", "Không ai cả", "Merlin"],
         correct: 1
       }
     ],
@@ -91,20 +91,20 @@ const QuizPage = ({ onBack, characterData }) => {
         correct: 1
       }
     ],
-    nimue: [
+    tristan: [
       {
-        question: "Nimue còn được gọi là gì?",
-        options: ["Nữ hoàng bóng đêm", "Nàng tiên hồ (Lady of the Lake)", "Thần rừng", "Bà chúa tuyết"],
-        correct: 1
+        question: "Tristan nổi tiếng với câu chuyện tình với ai?",
+        options: ["Isolde", "Guinevere", "Morgana", "Elaine"],
+        correct: 0
       },
       {
-        question: "Vật phẩm quan trọng Nimue đã trao cho Arthur là gì?",
-        options: ["Nhẫn vàng", "Kiếm Excalibur", "Áo choàng tàng hình", "Bản đồ Avalon"],
-        correct: 1
+        question: "Tristan là hiệp sĩ đến từ đâu?",
+        options: ["Cornwall", "Rome", "Pháp", "Bắc Cực"],
+        correct: 0
       },
       {
-        question: "Nimue có vai trò gì đối với phép thuật của Merlin?",
-        options: ["Học trò và người phong ấn Merlin", "Kẻ thù", "Con gái", "Người phục vụ"],
+        question: "Vũ khí sở trường của Tristan?",
+        options: ["Cung tên và Kiếm", "Búa chiến", "Roi da", "Phép thuật"],
         correct: 0
       }
     ]
@@ -164,7 +164,7 @@ const QuizPage = ({ onBack, characterData }) => {
               <h2 className="character-name" style={{ fontSize: '1.8rem', marginBottom: '30px', minHeight: '80px' }}>
                 {questions[currentQuestion].question}
               </h2>
-              
+
               <div className="quiz-options" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                 {questions[currentQuestion].options.map((option, index) => (
                   <button
@@ -200,11 +200,11 @@ const QuizPage = ({ onBack, characterData }) => {
           <div className="main-portrait" style={{ opacity: 0.9 }}>
             <div className="portrait-frame">
               {/* Hiển thị ảnh của nhân vật chương đó */}
-              <img 
-                src={characterData?.image} 
-                alt={characterData?.name} 
-                className="portrait-img" 
-                style={{ filter: showResult ? 'sepia(0.5)' : 'none' }} 
+              <img
+                src={characterData?.image}
+                alt={characterData?.name}
+                className="portrait-img"
+                style={{ filter: showResult ? 'sepia(0.5)' : 'none' }}
               />
               <FrameSVG className="svg-border" size="large" />
             </div>
