@@ -8,7 +8,7 @@ function HomePage({ onEnter }) {
       <div className="homepage-container">
         {/* Header */}
         <header className="homepage-header">
-          <h1 className="main-title">HÀNH TRÌNH TƯ TƯỞNG<br />HỒ CHÍ MINH</h1>
+          <h1 className="main-title">TƯ TƯỞNG HỒ CHÍ MINH VỀ ĐẢNG CỘNG SẢN VIỆT NAM VÀ NHÀ NƯỚC CỦA DÂN, DO DÂN, VÌ DÂN</h1>
         </header>
 
         {/* Main Content */}
@@ -53,7 +53,7 @@ function HomePage({ onEnter }) {
           <div className="title-section">
 
             <h1 className="subtitle">
-              <span className="title-of">“ Từ tìm đường cứu nước đến tư tưởng Độc lập dân tộc gắn liền với CNXH”</span>
+              <span className="title-of">Từ tìm đường cứu nước đến tư tưởng Độc lập dân tộc gắn liền với CNXH</span>
             </h1>
           </div>
 

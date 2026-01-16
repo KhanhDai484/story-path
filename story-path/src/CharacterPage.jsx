@@ -64,7 +64,7 @@ function CharacterPage({
       name: 'Pháp Quyền Nhân Nghĩa',
       title: 'Pháp luật & Kiểm soát quyền lực',
       bg: 'bg-lake',
-      image: "https://i.pinimg.com/1200x/6d/94/12/6d9412bdb8a8adedc23932bd82e2ba9b.jpg",
+      image: "https://png.pngtree.com/thumb_back/fw800/background/20230930/pngtree-symbol-of-justice-balanced-scales-of-law-and-hammer-on-wooden-image_13542850.png",
       desc: 'Xây dựng nhà nước thượng tôn pháp luật gắn liền với đạo đức và các biện pháp quyết liệt phòng chống "giặc nội xâm".'
     },
 

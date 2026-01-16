@@ -501,8 +501,8 @@
 
 .portrait-frame {
   position: relative;
-  width: 280px;
-  height: 380px;
+  width: 380px;
+  height: 520px;
   animation: portraitFloat 6s ease-in-out infinite;
 }
 
@@ -543,7 +543,7 @@
 .portrait-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   clip-path: url(#frameClipPath);
   filter: contrast(1.1) brightness(0.95);
   transition: 0.5s;
