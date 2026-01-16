@@ -4,84 +4,93 @@ import './CharacterPage.css';
 import FrameSVG from './components/FrameSVG';
 import FrameClipPath from './components/FrameClipPath';
 
-
-
-
-import img3 from './pictures/3.jpg';
-import img4 from './pictures/4.jpg';
 import img5 from './pictures/5.jpg';
-import img6 from './pictures/6.jpg';
 
-function CharacterPage({ onBack, onGoToContent, onGoToQuiz }) {
-const stages = {
-  Stage1: {
-    id: 'merlin',
-    name: 'RỜI QUÊ HƯƠNG (1911)',
-    title: 'KHỞI NGUỒN CÂU HỎI LỚN',
-    bg: 'bg-forest',
-    image: 'https://i.pinimg.com/736x/89/ca/4b/89ca4bb279d861de352644d5cbf1074a.jpg',
-    desc: 'Đầu thế kỷ XX, Việt Nam mất độc lập, các phong trào yêu nước theo khuynh hướng phong kiến và tư sản đều thất bại, bộc lộ mâu thuẫn giữa tinh thần yêu nước và con đường cứu nước chưa đúng đắn.'
+function CharacterPage({
+  onBack,
+  onGoToContent,
+  onGoToQuiz,
+  initialStage = 'Stage1',
+  onStageChange
+}) {
+  const stages = {
+    Stage1: {
+      id: 'merlin',
+      name: 'Sự tất yếu & Vai trò của Đảng',
+      title: '',
+      bg: 'bg-forest',
+      image: 'https://i.pinimg.com/736x/89/ca/4b/89ca4bb279d861de352644d5cbf1074a.jpg',
+      desc:
+        'Khẳng định Đảng là nhân tố quyết định thắng lợi, ra đời từ sự kết hợp giữa chủ nghĩa Mác - Lênin với phong trào công nhân và yêu nước.'
+    },
 
-  },
+    Stage2: {
+      id: 'arthur',
+      name: 'Bản chất Đảng Văn Minh',
+      title: '',
+      bg: 'bg-mountain',
+      image: 'https://i.pinimg.com/736x/ef/66/2f/ef662f401a39b312846792caea80aad9.jpg',
+      desc:
+        'Khám phá tư tưởng "Đảng là đạo đức, là văn minh" cùng 8 nguyên tắc xây dựng Đảng kiểu mới để giữ vững bản chất cách mạng.'
+    },
 
-  Stage2: {
-    id: 'arthur',
-    name: ' THẾ GIỚI TƯ BẢN (1911–1917)',
-    title: 'NHẬN DIỆN GIỚI HẠN CỦA “TỰ DO” ',
-    bg: 'bg-mountain',
-    image: 'https://i.pinimg.com/736x/ef/66/2f/ef662f401a39b312846792caea80aad9.jpg',
-    desc: 'Nguyễn Ái Quốc chứng kiến sự bóc lột, bất công trong xã hội tư bản, trái ngược với các khẩu hiệu tự do, bình đẳng.'
-  },
+    Stage3: {
+      id: 'lancelot',
+      name: 'Công tác Cán bộ & Đảng viên',
+      title: '',
+      bg: 'bg-castle',
+      image:
+        'https://media.baobinhphuoc.com.vn/Content/UploadFiles/EditorFiles/images/2017/Quy4/ccc26102017105816.jpg',
+      desc:
+        'Tập trung vào tư tưởng "Cán bộ là cái gốc của mọi công việc", tiêu chuẩn Đức - Tài và rèn luyện tư cách người cách mạng.'
+    },
 
-  Stage3: {
-    id: 'lancelot',
-    name: 'ÁNH SÁNG CÁCH MẠNG THÁNG MƯỜI (1917–1920)',
-    title: 'LÝ LUẬN KHOA HỌC ',
-    bg: 'bg-castle',
-    image: "https://media.baobinhphuoc.com.vn/Content/UploadFiles/EditorFiles/images/2017/Quy4/ccc26102017105816.jpg",
-    desc: 'Cách mạng Tháng Mười Nga thành công, mở ra thời đại mới cho phong trào cách mạng thế giới.'
-  },
+    Stage4: {
+      id: 'galahad',
+      name: 'Nhà nước của Dân, do Dân, vì Dân',
+      title: '',
+      bg: 'bg-cave',
+      image: 'https://cdn.cungcap.net/media/img/2019/04/15/ncG7c-1555272912.jpeg',
+      desc:
+        'Làm rõ bản chất nhà nước dân chủ, nơi tất cả quyền lực thuộc về nhân dân và cán bộ đóng vai trò là "công bộc" trung thành.'
+    },
 
-  Stage4: {
-    id: 'galahad',
-    name: 'TỪ NGƯỜI YÊU NƯỚC ĐẾN NGƯỜI CỘNG SẢN (1920)',
-    title: 'BƯỚC NGOẶT LỊCH SỬ',
-    bg: 'bg-cave',
-    image: "https://cdn.cungcap.net/media/img/2019/04/15/ncG7c-1555272912.jpeg",
-    desc: 'Nguyễn Ái Quốc tham gia phong trào cộng sản quốc tế và trở thành đảng viên cộng sản.'
-  },
+    Stage5: {
+      id: 'percival',
+      name: 'Pháp quyền & Kiểm soát quyền lực',
+      title: '',
+      bg: 'bg-lake',
+      image: img5,
+      desc:
+        'Xây dựng nhà nước thượng tôn pháp luật gắn liền với đạo đức và các biện pháp quyết liệt phòng chống "giặc nội xâm".'
+    },
 
-  Stage5: {
-    id: 'percival',
-    name: 'VẬN DỤNG SÁNG TẠO CHO VIỆT NAM (1921–1930)',
-    title: 'KHÔNG THỂ ÁP DỤNG MÁY MÓC',
-    bg: 'bg-lake',
-    image: img5,
-    desc: 'Việt Nam là nước thuộc địa nửa phong kiến, có điều kiện đặc thù, không thể áp dụng máy móc mô hình cách mạng nước ngoài.'
-  },
-
-  Stage6: {
-    id: 'tristan',
-    name: 'KẾT TINH TƯ TƯỞNG – GIÁ TRỊ LÂU DÀI',
-    title: 'TƯ TƯỞNG HỒ CHÍ MINH',
-    bg: 'bg-ocean',
-    image: "https://i.vnask.com/Data/image/2021/04/10/tho-bac-ho-thieu-nhi-1.jpg",
-    desc: 'Tư tưởng Hồ Chí Minh hình thành từ sự kết hợp giữa lý luận Mác – Lênin và thực tiễn cách mạng Việt Nam.'
-  }
-};
-
+    Stage6: {
+      id: 'tristan',
+      name: 'Vận dụng & Đổi mới hiện nay',
+      title: '',
+      bg: 'bg-ocean',
+      image:
+        'https://i.vnask.com/Data/image/2021/04/10/tho-bac-ho-thieu-nhi-1.jpg',
+      desc:
+        'Kiên định mục tiêu độc lập dân tộc và CNXH, đồng thời đổi mới phương thức lãnh đạo của Đảng trong bối cảnh thời đại mới.'
+    }
+  };
 
   const stageKeys = Object.keys(stages);
-  const [currentKey, setCurrentKey] = useState('Stage1');
+  const [currentKey, setCurrentKey] = useState(initialStage);
   const [isExiting, setIsExiting] = useState(false);
 
   const handleStageChange = (key) => {
     if (key === currentKey) return;
+
     setIsExiting(true);
+
     setTimeout(() => {
       setCurrentKey(key);
       setIsExiting(false);
-    }, 400);
+      onStageChange?.(key);
+    }, 400); // thời gian khớp với animation CSS
   };
 
   const current = stages[currentKey];
@@ -109,7 +118,10 @@ const stages = {
             <p className="character-description">{current.desc}</p>
 
             <div className="action-buttons">
-              <button className="btn-action primary" onClick={() => onGoToContent(current)}>
+              <button
+                className="btn-action primary"
+                onClick={() => onGoToContent(current)}
+              >
                 Nội dung chi tiết
               </button>
               <button
@@ -123,7 +135,11 @@ const stages = {
 
           <div className="main-portrait">
             <div className="portrait-frame">
-              <img src={current.image} alt={current.name} className="portrait-img" />
+              <img
+                src={current.image}
+                alt={current.name}
+                className="portrait-img"
+              />
               <FrameSVG className="svg-border" size="large" />
             </div>
           </div>
@@ -138,7 +154,11 @@ const stages = {
                 onClick={() => handleStageChange(key)}
               >
                 <div className="thumb-container">
-                  <img src={stages[key].image} alt={key} className="thumb-img" />
+                  <img
+                    src={stages[key].image}
+                    alt={stages[key].name}
+                    className="thumb-img"
+                  />
                   <FrameSVG className="thumb-svg" size="small" />
                 </div>
                 <span className="thumb-name">{stages[key].name}</span>

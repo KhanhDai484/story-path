@@ -7,6 +7,7 @@ import QuizPage from './QuizPage';
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [activeCharacterData, setActiveCharacterData] = useState(null);
+  const [currentStageKey, setCurrentStageKey] = useState('Stage1');
 
   // Hàm xử lý khi nhấn "Nội dung chi tiết"
   const handleGoToContent = (characterObj) => {
@@ -23,26 +24,28 @@ function App() {
   return (
     <>
       {currentPage === 'home' && <HomePage onEnter={() => setCurrentPage('character')} />}
-      
+
       {currentPage === 'character' && (
-        <CharacterPage 
-          onBack={() => setCurrentPage('home')} 
+        <CharacterPage
+          onBack={() => setCurrentPage('home')}
           onGoToContent={handleGoToContent} // QUAN TRỌNG: Phải có dòng này
-          onGoToQuiz={handleGoToQuiz} 
+          onGoToQuiz={handleGoToQuiz}
+          initialStage={currentStageKey}
+          onStageChange={setCurrentStageKey}
         />
       )}
-      
+
       {currentPage === 'content' && (
-        <ContentPage 
-          onBack={() => setCurrentPage('character')} 
-          characterData={activeCharacterData} 
+        <ContentPage
+          onBack={() => setCurrentPage('character')}
+          characterData={activeCharacterData}
         />
       )}
 
       {currentPage === 'quiz' && activeCharacterData && (
-        <QuizPage 
-          onBack={() => setCurrentPage('character')} 
-          characterData={activeCharacterData} 
+        <QuizPage
+          onBack={() => setCurrentPage('character')}
+          characterData={activeCharacterData}
         />
       )}
     </>
