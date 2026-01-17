@@ -3,7 +3,7 @@ import HomePage from './HomePage';
 import CharacterPage from './CharacterPage';
 import ContentPage from './ContentPage'; // Đảm bảo đã import trang này
 import QuizPage from './QuizPage';
-import JourneyMap from './JourneyMap';
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -24,20 +24,18 @@ function App() {
 
   return (
     <>
-      {currentPage === 'home' && <HomePage onEnter={() => setCurrentPage('journey')} />}
-
-      {currentPage === 'journey' && (
-        <JourneyMap
-          onSelectStage={(stageId) => {
-            setCurrentStageKey(`Stage${stageId}`);
+      {currentPage === 'home' && (
+        <HomePage
+          onEnter={() => {
             setCurrentPage('character');
+            setCurrentStageKey('Stage1');
           }}
         />
       )}
 
       {currentPage === 'character' && (
         <CharacterPage
-          onBack={() => setCurrentPage('journey')}
+          onBack={() => setCurrentPage('home')}
           onGoToContent={handleGoToContent} // QUAN TRỌNG: Phải có dòng này
           onGoToQuiz={handleGoToQuiz}
           initialStage={currentStageKey}
