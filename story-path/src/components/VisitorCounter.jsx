@@ -12,6 +12,7 @@ function VisitorCounter() {
   useEffect(() => {
     const recordVisit = async () => {
       try {
+        console.log('🔵 Calling API:', API_URL);
         // Record this visit
         const response = await fetch(API_URL, {
           method: 'POST',
@@ -20,21 +21,27 @@ function VisitorCounter() {
           }
         });
         
+        console.log('🔵 Response status:', response.status);
+        
         if (response.ok) {
           const data = await response.json();
+          console.log('✅ Visitor count:', data.count);
           setVisitorCount(data.count);
+        } else {
+          console.error('❌ API error:', response.status, response.statusText);
         }
       } catch (error) {
-        console.error('Error recording visit:', error);
+        console.error('❌ Error recording visit:', error);
         // Fallback to get count only
         try {
           const getResponse = await fetch(API_URL);
           if (getResponse.ok) {
             const data = await getResponse.json();
+            console.log('📊 Fallback count:', data.count);
             setVisitorCount(data.count);
           }
         } catch (err) {
-          console.error('Error fetching count:', err);
+          console.error('❌ Error fetching count:', err);
         }
       } finally {
         setLoading(false);

@@ -1,6 +1,4 @@
-const API_URL = process.env.NODE_ENV === 'production' 
-  ? '/api/chat' 
-  : 'http://localhost:3001/api/chat';
+const API_URL = '/api/chat';
 
 export const sendMessageToClaude = async (userMessage, characterContext) => {
   try {
