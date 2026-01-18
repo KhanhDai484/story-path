@@ -203,7 +203,7 @@
 }
 
 .menu-text {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   color: #a89968;
   cursor: pointer;
   letter-spacing: 2px;
@@ -284,7 +284,7 @@
 /* Annotation Labels */
 .annotation {
   position: absolute;
-  font-family: 'Lora', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   font-size: 0.85rem;
   color: rgba(196, 185, 152, 0.7);
   letter-spacing: 1px;
@@ -341,7 +341,7 @@
 }
 
 .character-name {
-  font-family: 'Cinzel', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   font-size: 3.5rem;
   color: #c4b998;
   margin-bottom: 10px;
@@ -374,7 +374,7 @@
 }
 
 .character-title {
-  font-family: 'Lora', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   font-size: 1.6rem;
   color: #a89968;
   font-style: italic;
@@ -441,7 +441,7 @@
 
 .btn-action {
   padding: 12px 30px;
-  font-family: 'Cinzel', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   background: transparent;
   border: 1px solid #5a5550;
   color: #a89968;
@@ -667,7 +667,7 @@
   content: attr(data-stage);
   position: absolute;
   top: -25px;
-  font-family: 'Cinzel', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   font-size: 0.65rem;
   color: rgba(196, 185, 152, 0.4);
   letter-spacing: 2px;
@@ -685,7 +685,7 @@
 /* Tên nhân vật phát sáng */
 .thumb-name {
   margin-top: 12px;
-  font-family: 'Cinzel', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   font-size: 0.75rem;
   color: #a89968;
   letter-spacing: 1px;
@@ -766,7 +766,7 @@
   background: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(196, 185, 152, 0.3);
   padding: 8px 15px;
-  font-family: 'Lora', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   font-size: 0.85rem;
   color: #c4b998;
   letter-spacing: 1px;
@@ -982,7 +982,7 @@
 }
 
 .chatbot-header h3 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   color: #c4b998;
   font-size: 1.1rem;
   margin: 0;

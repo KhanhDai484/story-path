@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 :root {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Noto Serif', 'Playfair Display', 'Cormorant Garamond', serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -43,15 +43,21 @@ body {
 
 
 h1 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Playfair Display', 'Noto Serif', serif;
   font-size: 3.2em;
   line-height: 1.1;
   color: #d4c499;
 }
 
 h2, h3 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Noto Serif', 'Playfair Display', serif;
   color: #d4c499;
+}
+
+/* Override tất cả font Cinzel và Lora để hỗ trợ tiếng Việt */
+* {
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
@@ -119,4 +125,13 @@ h2, h3 {
 
 .scale-102 {
   transform: scale(1.02);
+}
+/* Global font override cho tiếng Việt - ưu tiên cao nhất */
+[style*="font-family: 'Cinzel'"],
+[style*="font-family: 'Lora'"],
+.character-name,
+.thumb-name,
+.menu-text,
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Serif', 'Playfair Display', serif !important;
 }
