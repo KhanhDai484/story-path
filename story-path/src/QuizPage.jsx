@@ -436,5 +436,5 @@ const QuizPage = ({ onBack, characterData }) => {
     </div>
   );
 };
-
+  
 export default QuizPage;
