@@ -2,8 +2,15 @@ import Redis from 'ioredis';
 
 const VISITOR_KEY = 'visitor_count';
 
-// Kết nối Redis với REDIS_URL
-const redis = new Redis(process.env.REDIS_URL);
+// Cấu hình Redis cho serverless environment
+let redis;
+if (process.env.REDIS_URL) {
+  redis = new Redis(process.env.REDIS_URL, {
+    maxRetriesPerRequest: 3, // Giảm số lần retry
+    enableReadyCheck: false,
+    lazyConnect: true, // Kết nối khi cần
+  });
+}
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -21,6 +28,19 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Kiểm tra Redis có được cấu hình không
+    if (!redis) {
+      return res.status(500).json({ 
+        error: 'Redis not configured',
+        details: 'Make sure REDIS_URL is configured in Vercel environment variables'
+      });
+    }
+
+    // Kết nối đến Redis nếu chưa connect
+    if (redis.status === 'wait') {
+      await redis.connect();
+    }
+
     if (req.method === 'POST') {
       // Increment visitor count atomically
       const count = await redis.incr(VISITOR_KEY);
