@@ -4,6 +4,7 @@ import CharacterPage from './CharacterPage';
 import ContentPage from './ContentPage'; // Đảm bảo đã import trang này
 import QuizPage from './QuizPage';
 
+
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [activeCharacterData, setActiveCharacterData] = useState(null);
@@ -23,7 +24,14 @@ function App() {
 
   return (
     <>
-      {currentPage === 'home' && <HomePage onEnter={() => setCurrentPage('character')} />}
+      {currentPage === 'home' && (
+        <HomePage
+          onEnter={() => {
+            setCurrentPage('character');
+            setCurrentStageKey('Stage1');
+          }}
+        />
+      )}
 
       {currentPage === 'character' && (
         <CharacterPage
