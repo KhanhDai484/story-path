@@ -1,6 +1,9 @@
-import { kv } from '@vercel/kv';
+import Redis from 'ioredis';
 
 const VISITOR_KEY = 'visitor_count';
+
+// Kết nối Redis với REDIS_URL
+const redis = new Redis(process.env.REDIS_URL);
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -20,7 +23,7 @@ export default async function handler(req, res) {
   try {
     if (req.method === 'POST') {
       // Increment visitor count atomically
-      const count = await kv.incr(VISITOR_KEY);
+      const count = await redis.incr(VISITOR_KEY);
       
       return res.status(200).json({ 
         count: count,
@@ -30,11 +33,11 @@ export default async function handler(req, res) {
 
     if (req.method === 'GET') {
       // Get current count
-      let count = await kv.get(VISITOR_KEY);
+      let count = await redis.get(VISITOR_KEY);
       
       // Initialize if not exists
       if (count === null) {
-        await kv.set(VISITOR_KEY, 0);
+        await redis.set(VISITOR_KEY, 0);
         count = 0;
       }
       
