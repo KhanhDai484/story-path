@@ -1,15 +1,6 @@
-import Redis from 'ioredis';
+import { kv } from '@vercel/kv';
 
 const VISITOR_KEY = 'visitor_count';
-
-// Initialize Redis client
-let redis;
-if (process.env.REDIS_URL) {
-  redis = new Redis(process.env.REDIS_URL);
-} else {
-  // Fallback for development
-  redis = null;
-}
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -27,18 +18,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Check if Redis is configured
-    if (!redis) {
-      console.error('Redis not configured!');
-      return res.status(500).json({ 
-        error: 'Redis database not configured',
-        details: 'Missing REDIS_URL environment variable'
-      });
-    }
-
     if (req.method === 'POST') {
       // Increment visitor count atomically
-      const count = await redis.incr(VISITOR_KEY);
+      const count = await kv.incr(VISITOR_KEY);
       
       return res.status(200).json({ 
         count: count,
@@ -48,11 +30,11 @@ export default async function handler(req, res) {
 
     if (req.method === 'GET') {
       // Get current count
-      let count = await redis.get(VISITOR_KEY);
+      let count = await kv.get(VISITOR_KEY);
       
       // Initialize if not exists
       if (count === null) {
-        await redis.set(VISITOR_KEY, 0);
+        await kv.set(VISITOR_KEY, 0);
         count = 0;
       }
       
@@ -67,7 +49,7 @@ export default async function handler(req, res) {
     console.error('Visitor API Error:', error);
     return res.status(500).json({ 
       error: error.message,
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: 'Make sure REDIS_URL is configured in Vercel environment variables'
     });
   }
 }
