@@ -7,7 +7,12 @@ import VisitorCounter from './components/VisitorCounter';
 import { sendMessageToClaude } from './services/claudeService';
 
 
-import img5 from './pictures/5.jpg';
+import img1 from './assets/1.jpg';
+import img2 from './assets/2.jpg';
+import img3 from './assets/3.jpg';
+import img4 from './assets/4.png';
+import img5 from './assets/5.jpeg';
+import img6 from './assets/6.jpg';
 
 function CharacterPage({
   onBack,
@@ -23,7 +28,7 @@ function CharacterPage({
       name: 'Sự Ra Đời Của Đảng',
       title: 'Sự tất yếu & Vai trò lãnh đạo',
       bg: 'bg-forest',
-      image: 'https://i.pinimg.com/736x/89/ca/4b/89ca4bb279d861de352644d5cbf1074a.jpg',
+      image: "https://static.wixstatic.com/media/9d8ed5_539110379ea84470a31956ed3e4a6b1f~mv2.jpg/v1/fill/w_800,h_1221,al_c,q_85,enc_avif,quality_auto/9d8ed5_539110379ea84470a31956ed3e4a6b1f~mv2.jpg",
       desc: 'Khẳng định Đảng là nhân tố quyết định thắng lợi, ra đời từ sự kết hợp giữa chủ nghĩa Mác - Lênin với phong trào công nhân và yêu nước.'
     },
 
@@ -32,7 +37,7 @@ function CharacterPage({
       name: 'Đảng Văn Minh',
       title: 'Bản chất & Nguyên tắc hoạt động',
       bg: 'bg-mountain',
-      image: 'https://i.pinimg.com/736x/ef/66/2f/ef662f401a39b312846792caea80aad9.jpg',
+      image: 'https://vb.1cdn.vn/2025/08/29/static-images.vnncdn.net-vps_images_publish-000001-000003-2025-8-28-_w-49ab1cf456adddf384bc-4046.jpg',
       desc: 'Khám phá tư tưởng "Đảng là đạo đức, là văn minh" cùng 8 nguyên tắc xây dựng Đảng kiểu mới để giữ vững bản chất cách mạng.'
     },
 
@@ -41,7 +46,7 @@ function CharacterPage({
       name: 'Cái Gốc Công Việc',
       title: 'Xây dựng đội ngũ Cán bộ',
       bg: 'bg-castle',
-      image: 'https://media.baobinhphuoc.com.vn/Content/UploadFiles/EditorFiles/images/2017/Quy4/ccc26102017105816.jpg',
+      image: "https://vnn-imgs-f.vgcloud.vn/2021/12/31/20/nhung-cau-noi-tham-thia-cua-tong-bi-thu-trong-nam-2021-4.jpg ",
       desc: 'Tập trung vào tư tưởng "Cán bộ là cái gốc của mọi công việc", tiêu chuẩn Đức - Tài và rèn luyện tư cách người cách mạng.'
     },
 
@@ -50,7 +55,7 @@ function CharacterPage({
       name: 'Chủ Quyền Nhân Dân',
       title: 'Nhà nước của, do, vì Dân',
       bg: 'bg-cave',
-      image: 'https://cdn.cungcap.net/media/img/2019/04/15/ncG7c-1555272912.jpeg',
+      image: "https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-bo-doi-1.jpg",
       desc: 'Làm rõ bản chất nhà nước dân chủ, nơi tất cả quyền lực thuộc về nhân dân và cán bộ đóng vai trò là "công bộc" trung thành.'
     },
 
@@ -59,7 +64,7 @@ function CharacterPage({
       name: 'Pháp Quyền Nhân Nghĩa',
       title: 'Pháp luật & Kiểm soát quyền lực',
       bg: 'bg-lake',
-      image: img5,
+      image: "https://png.pngtree.com/thumb_back/fw800/background/20230930/pngtree-symbol-of-justice-balanced-scales-of-law-and-hammer-on-wooden-image_13542850.png",
       desc: 'Xây dựng nhà nước thượng tôn pháp luật gắn liền với đạo đức và các biện pháp quyết liệt phòng chống "giặc nội xâm".'
     },
 
@@ -68,7 +73,7 @@ function CharacterPage({
       name: 'Đổi Mới Hiện Nay',
       title: 'Vận dụng trong giai đoạn mới',
       bg: 'bg-ocean',
-      image: 'https://i.vnask.com/Data/image/2021/04/10/tho-bac-ho-thieu-nhi-1.jpg',
+      image: "https://toplist.vn/images/800px/thanh-pho-ho-chi-minh-558976.jpg",
       desc: 'Kiên định mục tiêu độc lập dân tộc và CNXH, đồng thời đổi mới phương thức lãnh đạo của Đảng trong bối cảnh thời đại mới.'
     }
   };
@@ -97,7 +102,7 @@ function CharacterPage({
       setCurrentKey(key);
       setIsExiting(false);
       onStageChange?.(key);
-    }, 400); 
+    }, 400);
   };
   
   // Draggable AI icon handlers
@@ -175,7 +180,7 @@ function CharacterPage({
       <div className="full-screen-container">
         <header className="header">
           <div className="header-left">
-            <div className="menu-text" onClick={onBack} style={{cursor: 'pointer'}}>Trở về</div>
+            <div className="menu-text" onClick={onBack} style={{ cursor: 'pointer' }}>Trở về</div>
             <div className="header-line"></div>
           </div>
           <div className="header-right">
